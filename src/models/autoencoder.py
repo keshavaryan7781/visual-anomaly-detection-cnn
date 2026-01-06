@@ -37,7 +37,7 @@ def build_decoder(latent_shape = (32, 32, 128)):
     y = tfl.BatchNormalization()(y)
     y = tfl.ReLU()(y)
 
-    y = tfl.UpSampling2D(size= 2)(latent)
+    y = tfl.UpSampling2D(size= 2)(y)
     y = tfl.Conv2D(32, kernel_size = 3, padding = "same", strides = 1)(y)
     y = tfl.BatchNormalization()(y)
     y = tfl.ReLU()(y)
